@@ -1,0 +1,104 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}BlogHub{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/header.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    {% block css %}  {% endblock %}
+</head>
+<body>
+
+<header>
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fa-solid fa-book-open"></i>
+            BlogHub
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="#">Blogs</a></li>
+            <li><a href="#">Categories</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+            <input type="search" placeholder="Search...">
+            
+            <button id="themeBtn">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+            
+            <a href="#" class="btn login">Login</a>
+
+            <div class="menu-btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+</header>
+<main>
+    {% block content %}
+    {% endblock %}
+</main>
+
+
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-grid">
+
+            <div class="footer-column">
+                <h3>BlogHub</h3>
+                <p>
+                    Programming tutorials, interview preparation,
+                    Django, Python, MySQL and Web Development blogs.
+                </p>
+            </div>
+
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="#">Blogs</a></li>
+                    <li><a href="#">Categories</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="#">Python</a></li>
+                    <li><a href="#">Django</a></li>
+                    <li><a href="#">REST API</a></li>
+                    <li><a href="#">MySQL</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 BlogHub. All Rights Reserved.
+        </div>
+    </div>
+</footer>
+
+<script src="{% static 'js/index.js' %}"></script>
+
+{% block footer %}
+{% endblock %}
+</body>
+</html>

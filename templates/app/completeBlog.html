@@ -1,0 +1,62 @@
+{% extends 'app/BaseCode.html' %}
+{% load static %}
+
+{% block title %}
+{{ category.category_name }} Blogs
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/completeBlog.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="category-banner">
+    <h1>{{ category.category_name }}</h1>
+    <p>{{ Blog|length }} Blog{{ Blog|length|pluralize }} Available</p>
+</section>
+
+<section class="featured">
+    {% if Blog %}
+    <div class="blog-grid">
+        {% for data in Blog %}
+        <div class="blog-card">
+            <img src="{{ data.featured_image.url }}" alt="{{ data.title }}">
+
+            <div class="overlay">
+                <span class="category">{{ data.category }}</span>
+
+                <h3>{{ data.title }}</h3>
+
+                <p>{{ data.short_desc|truncatewords:18 }}</p>
+
+                <a href="{% url 'blogindetails' data.id %}" class="read-btn">
+                    Read More →
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    {% else %}
+    <div class="empty-state">
+        <div class="empty-icon">📚</div>
+
+        <h2>No Blogs Found</h2>
+
+        <p>
+            There are currently no blogs available in
+            <strong>{{ category.category_name }}</strong>.
+        </p>
+
+        <a href="{% url 'blogs' %}" class="back-btn">
+            Browse All Blogs
+        </a>
+    </div>
+
+    {% endif %}
+</section>
+{% endblock %}
+
+{% block footer %}
+<script src="{% static 'js/index.js' %}"></script>
+{% endblock %}
