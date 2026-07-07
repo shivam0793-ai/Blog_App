@@ -1,14 +1,19 @@
-from django.urls import path
+from django.urls import path,include
 from . import views
 from django.conf import settings
 from django.conf.urls.static import static
 
+
 urlpatterns=[
     path('',views.Home,name='Home'),
-    path('blogs/',views.blogs_view,name='blogs'),
-    path('category_bolg/<int:catid>',views.category_bolg,name='category_bolg'),
-    path('blogindetails/<int:id>',views.blogindetails,name='blogindetails')
+    path('all_blogs/<int:id>/',views.all_blogs,name='all_blogs'),
+    path('OneBlogDetails/<slug:slug>/',views.OneBlogDetails,name='OneBlogDetails'),
+    path('Search/posts/',views.Search_view,name='Search'),
+    path('reg/',views.regview,name='reg'),
+    path('accounts/',include('django.contrib.auth.urls'))
+
 ]
+
 if settings.DEBUG:
     urlpatterns += static(
         settings.MEDIA_URL,

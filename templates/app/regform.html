@@ -1,0 +1,32 @@
+!{% extends 'app/BaseCode.html' %}
+{% load static %}
+
+{% block title %}
+{{ category.category_name }} Blogs
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/RegForm.css' %}">
+{% endblock %}
+
+
+
+{% block content %}
+<section class="register-section">
+    <form class="register-form" action="{% url 'reg' %}" method="post">
+        <h2>Create Account</h2>
+
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button type="submit">Register</button>
+    </form>
+</section>
+{% endblock %}
+
+
+
+
+{% block footer %}
+<script src="{% static 'js/index.js' %}"></script>
+{% endblock %}

@@ -33,3 +33,13 @@ class Blog(models.Model):
     is_featured=models.BooleanField(default=False)
     created_at=models.DateTimeField(auto_now_add=True)
     update_at=models.DateTimeField(auto_now=True)
+
+
+
+class Description(models.Model):
+    desc=models.TextField()
+
+
+class Social(models.Model):
+    social_name=models.CharField(max_length=33)
+    social_link=models.URLField()

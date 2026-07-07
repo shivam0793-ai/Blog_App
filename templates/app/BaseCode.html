@@ -27,13 +27,21 @@
             <li><a href="#">Contact</a></li>
         </ul>
         <div class="nav-actions">
-            <input type="search" placeholder="Search...">
-            
+            <form class="search-form" action="{% url 'Search' %}" method="get">
+                <input name="Keyword" type="search" placeholder="Search...">
+            </form>
             <button id="themeBtn">
                 <i class="fa-solid fa-moon"></i>
             </button>
             
-            <a href="#" class="btn login">Login</a>
+            {% if request.user.is_authenticated %}
+              <form action="{% url 'logout' %}" method="post">
+                 {% csrf_token %}
+                 <button class="btn btn-danger" type="submit">Logout</button>
+              </form>              
+            {% else %}
+              <a href="{% url 'login' %}" class="btn login">Login</a>
+            {% endif %}
 
             <div class="menu-btn">
                 <i class="fa-solid fa-bars"></i>
@@ -53,10 +61,9 @@
         <div class="footer-grid">
 
             <div class="footer-column">
-                <h3>BlogHub</h3>
+                <h3>Description</h3>
                 <p>
-                    Programming tutorials, interview preparation,
-                    Django, Python, MySQL and Web Development blogs.
+                    {{Desc.desc}}
                 </p>
             </div>
 
@@ -83,10 +90,10 @@
             <div class="footer-column">
                 <h3>Follow Us</h3>
                 <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/shivam-surlkar-9a3598347/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/shivam0793-ai" target="_blank"><i class="fab fa-github"></i></a>
                 </div>
             </div>
         </div>

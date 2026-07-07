@@ -10,7 +10,7 @@
     <div class="category-container">
 
         {% for category in categories %}
-        <a href="{% url 'category_bolg' category.id %}" class="category-item">
+        <a href="{% url 'all_blogs' category.id %}" class="category-item">
             {{ category }}
         </a>
         {% endfor %}
@@ -24,8 +24,8 @@
         <p>Read blogs on Python, Django, JavaScript, HTML, CSS and more.</p>
 
         <div class="hero-buttons">
-            <a href="{% url 'blogs' %}" class="btn">Explore Blogs</a>
-            <a href="{% url 'blogs' %}" class="btn outline">Get Started</a>
+            <a href="" class="btn">Explore Blogs</a>
+            <a href="" class="btn outline">Get Started</a>
         </div>
     </div>
 
