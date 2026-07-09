@@ -39,4 +39,70 @@
     {{ blog.blog_body|safe }}
 
 </section>
+<section class="comment-section">
+
+    <h3 class="comment-title">
+        Comments ({{ comment|length }})
+    </h3>
+
+    <!-- Add Comment -->
+    <form method="post" class="comment-form" action="{% url 'OneBlogDetails' blog.slug  %}">
+        {% csrf_token %}
+
+        <textarea
+            name="comment"
+            placeholder="Write your comment... max_500"
+            required></textarea>
+
+        <button type="submit">
+            <i class="fa-solid fa-paper-plane"></i>
+            Post Comment
+        </button>
+    </form>
+
+    <!-- Comments -->
+
+    {% for data in comment %}
+
+    <div class="comment-card">
+
+        <div class="comment-avatar">
+            {{ data.user.username|first|upper }}
+        </div>
+
+        <div class="comment-content">
+
+            <div class="comment-header">
+
+                <h5>{{ data.user.username }}</h5>
+
+                <span>
+                    {{ data.created_at|timesince }} ago
+                </span>
+
+            </div>
+
+            <p>
+                {{ data.comment }}
+            </p>
+
+        </div>
+
+    </div>
+
+    {% empty %}
+
+    <div class="no-comments">
+
+        <i class="fa-regular fa-comments"></i>
+
+        <p>No comments yet.</p>
+
+        <small>Be the first to comment.</small>
+
+    </div>
+
+    {% endfor %}
+
+</section>
 {% endblock %}

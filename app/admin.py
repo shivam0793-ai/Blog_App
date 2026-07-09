@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Blog, Category,Description,Social
+from .models import Blog, Category,Description,Social,Comment
 from .forms import RegForm
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.models import User
@@ -33,3 +33,7 @@ class DescAdmin(admin.ModelAdmin):
         if Description.objects.all().count()<1:
             return True
         return False
+
+@admin.register(Comment)
+class comment_admin(admin.ModelAdmin):
+    list_display=['comment','slug','user','created_at']

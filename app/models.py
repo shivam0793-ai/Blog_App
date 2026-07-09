@@ -43,3 +43,11 @@ class Description(models.Model):
 class Social(models.Model):
     social_name=models.CharField(max_length=33)
     social_link=models.URLField()
+
+
+
+class Comment(models.Model):
+    comment=models.CharField(max_length=500)
+    slug=models.CharField(max_length=200,blank=True)
+    created_at=models.DateTimeField(auto_now_add=True)
+    user=models.ForeignKey(User,on_delete=models.CASCADE)

@@ -1,0 +1,28 @@
+{% extends 'app/BaseCode.html' %}
+{% load static %}
+
+{% block title %}
+{{ blog.title }}
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/adduser.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="add-user-container">
+
+    <form action="{% url 'add_user' id %}" method="post">
+
+        <h2>Add User</h2>
+
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button type="submit">Submit</button>
+
+    </form>
+
+</div>
+{% endblock %}
