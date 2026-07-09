@@ -1,0 +1,151 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#f4f7fc;
+    font-family:'Poppins',sans-serif;
+}
+
+/* Section */
+
+.blog-header{
+    width:100%;
+    min-height:80vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px 20px;
+}
+
+/* Form */
+
+.blog-header form{
+    width:100%;
+    max-width:800px;
+    background:#fff;
+    padding:35px;
+    border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+/* Heading */
+
+.blog-header form::before{
+    content:"Add New Blog";
+    display:block;
+    font-size:30px;
+    font-weight:600;
+    color:#222;
+    margin-bottom:30px;
+    text-align:center;
+}
+
+/* Labels */
+
+.blog-header label{
+    display:block;
+    font-weight:600;
+    margin-bottom:8px;
+    margin-top:18px;
+    color:#333;
+}
+
+/* Inputs */
+
+.blog-header input,
+.blog-header textarea,
+.blog-header select{
+    width:100%;
+    padding:12px 15px;
+    border:1px solid #dcdcdc;
+    border-radius:8px;
+    font-size:15px;
+    outline:none;
+    transition:.3s;
+    background:#fff;
+}
+
+/* File Input */
+
+.blog-header input[type="file"]{
+    padding:10px;
+}
+
+/* Textarea */
+
+.blog-header textarea{
+    min-height:180px;
+    resize:vertical;
+}
+
+/* Focus */
+
+.blog-header input:focus,
+.blog-header textarea:focus,
+.blog-header select:focus{
+    border-color:#2563eb;
+    box-shadow:0 0 10px rgba(37,99,235,.15);
+}
+
+/* Checkbox */
+
+.blog-header input[type="checkbox"]{
+    width:auto;
+    margin-right:8px;
+}
+
+/* Submit Button */
+
+.blog-header button{
+    margin-top:30px;
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:8px;
+    background:#2563eb;
+    color:#fff;
+    font-size:17px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.blog-header button:hover{
+    background:#1d4ed8;
+    transform:translateY(-2px);
+}
+
+/* Error List */
+
+.errorlist{
+    list-style:none;
+    color:#dc3545;
+    margin-top:5px;
+    font-size:14px;
+}
+
+/* Help Text */
+
+.helptext{
+    display:block;
+    color:#777;
+    font-size:13px;
+    margin-top:5px;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+    .blog-header{
+        padding:20px;
+    }
+
+    .blog-header form{
+        padding:25px;
+    }
+
+}

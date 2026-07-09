@@ -1,96 +1,40 @@
-# Byte-compiled / optimized / DLL files
+# Python
 __pycache__/
 *.py[cod]
-*$py.class
+*.pyo
 
-# C extensions
-*.so
-
-# Distribution / packaging
-.Python
-build/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-
-# Virtual environments
+# Virtual Environment
 venv/
 env/
-ENV/
 .venv/
 
-# Environment variables
+# Environment Variables
 .env
-.env.*
-!.env.example
 
-# Django stuff
-*.log
+# SQLite
 db.sqlite3
-db.sqlite3-journal
+
+# Media Files
 media/
+
+# Collected Static Files
 staticfiles/
 
-# Collected static files
-/static/
-
-# Migrations (optional)
-# Uncomment if you don't want to track migrations
-# **/migrations/
-# !**/migrations/__init__.py
-
-# Pytest
-.pytest_cache/
-.coverage
-htmlcov/
-
-# mypy
-.mypy_cache/
-
-# Ruff
-.ruff_cache/
-
-# Pyre
-.pyre/
-
-# IDEs
+# IDE
 .vscode/
 .idea/
 
-# macOS
+# Logs
+*.log
+
+# OS Files
 .DS_Store
-
-# Windows
 Thumbs.db
-Desktop.ini
-
-# Jupyter Notebook
-.ipynb_checkpoints/
-
-# Coverage reports
-coverage.xml
-*.cover
-
-# Local settings
-local_settings.py
-
-# Secrets
-*.pem
-*.key
-*.crt
-
-# Cache
-.cache/
-
-# Python version
-.python-version
+.env
+__pycache__/
+*.pyc
+db.sqlite3
+media/
+staticfiles/
+venv/
+.env
