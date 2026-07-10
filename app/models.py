@@ -20,13 +20,16 @@ STATUS_CHOICE=(
     ('Draft','Draft')
 )
 
-
 class Blog(models.Model):
     title=models.CharField(max_length=100)
     slug=models.SlugField(max_length=120)
     category=models.ForeignKey(Category,on_delete=models.CASCADE)
     author=models.ForeignKey(User,on_delete=models.CASCADE)
-    featured_image=models.ImageField(upload_to='blog_image')
+    featured_image = models.ImageField(
+    upload_to="blog_image/",
+    blank=True,
+    null=True
+)
     short_desc=models.TextField(max_length=500)
     blog_body=models.CharField(max_length=1000)
     status=models.CharField(max_length=50,choices=STATUS_CHOICE,default='Draft',blank=True)

@@ -160,7 +160,7 @@ def delete_user(request, id):
     if request.method == "POST":
         user = get_object_or_404(User, id=id)
         user.delete()
-    return redirect("dashboard")
+    return HttpResponseRedirect("dashboard")
 
 
 

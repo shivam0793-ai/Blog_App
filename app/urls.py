@@ -25,13 +25,10 @@ urlpatterns=[
     path("delete_user/<int:id>/", views.delete_user, name="delete_user"),
 
     path('add_post',views.add_post,name='add_post'),
-    path('add_user/<int:id>',views.add_user,name='add_user')
+    path('add_user/<int:id>',views.add_user,name='add_user'),
+
 
 
 ]
 
-if settings.DEBUG:
-    urlpatterns += static(
-        settings.MEDIA_URL,
-        document_root=settings.MEDIA_ROOT
-    )
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
